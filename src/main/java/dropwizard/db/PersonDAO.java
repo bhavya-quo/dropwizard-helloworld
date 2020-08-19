@@ -23,6 +23,10 @@ public class PersonDAO extends AbstractDAO<Person> {
         return persist(person);
     }
 
+    public Optional <Person> update(Person person) {
+        return Optional.ofNullable(persist(person));
+    }
+
     @SuppressWarnings("unchecked")
     public List<Person> findAll() {
         return list((Query<Person>) namedQuery("dropwizard.core.Person.findAll"));
